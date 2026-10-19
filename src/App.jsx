@@ -1,29 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { profile } from "./data/profile.js";
-import Avatar from "./components/Avatar.jsx";
-import LinkButton from "./components/LinkButton.jsx";
+import Home from "./pages/Home.jsx";
+import Games from "./pages/Games.jsx";
+
+// "#games" in the address shows the secret games page
+const getPage = () => (window.location.hash === "#games" ? "games" : "home");
 
 export default function App() {
+  const [page, setPage] = useState(getPage);
+
   useEffect(() => {
-    document.title = `${profile.name} — Links`;
+    const onHashChange = () => {
+      setPage(getPage());
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
+
+  useEffect(() => {
+    document.title = page === "games" ? `${profile.name} — Games` : `${profile.name} — Links`;
+  }, [page]);
 
   return (
     <div className="flex min-h-screen justify-center px-4 py-16">
-      <main className="w-full max-w-md text-center">
-        <Avatar name={profile.name} src={profile.avatar} />
-        <h1 className="text-2xl font-bold">{profile.name}</h1>
-        <p className="mt-1.5 mb-8 text-muted">{profile.bio}</p>
-
-        <nav className="flex flex-col gap-3">
-          {profile.links.map((link) => (
-            <LinkButton key={link.label} {...link} />
-          ))}
-        </nav>
-
-        <footer className="mt-10 text-sm text-muted">
-          {profile.footer}
-        </footer>
+      <main key={page} className="w-full max-w-md text-center">
+        {page === "games" ? <Games /> : <Home />}
       </main>
     </div>
   );

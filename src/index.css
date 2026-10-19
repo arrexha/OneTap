@@ -1,28 +1,20 @@
 @import "tailwindcss";
 
-/* Theme colors — change these to restyle the whole page */
+/* Theme colors (Midnight Glow) — change these to restyle the whole page */
 :root {
-  --bg: #f5f5f4;
-  --card: #ffffff;
-  --text: #1c1917;
-  --muted: #78716c;
-  --border: #e7e5e4;
-  --accent: #6366f1;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0c0a09;
-    --card: #1c1917;
-    --text: #fafaf9;
-    --muted: #a8a29e;
-    --border: #292524;
-  }
+  color-scheme: dark;
+  --bg-top: #0f172a;
+  --bg-bottom: #020617;
+  --card: rgb(255 255 255 / 0.05);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: rgb(255 255 255 / 0.1);
+  --accent: #3b82f6;
+  --glow: rgb(59 130 246 / 0.4);
 }
 
 /* Makes the colors usable as Tailwind classes: bg-card, text-muted, border-accent... */
 @theme inline {
-  --color-bg: var(--bg);
   --color-card: var(--card);
   --color-text: var(--text);
   --color-muted: var(--muted);
@@ -31,5 +23,8 @@
 }
 
 body {
-  @apply bg-bg text-text font-sans;
+  @apply text-text font-sans;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom)) fixed;
+  background-color: var(--bg-bottom);
+  min-height: 100vh;
 }
