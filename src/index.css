@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Theme colors — change these to restyle the whole page */
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --accent: #6366f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0a09;
+    --card: #1c1917;
+    --text: #fafaf9;
+    --muted: #a8a29e;
+    --border: #292524;
+  }
+}
+
+/* Makes the colors usable as Tailwind classes: bg-card, text-muted, border-accent... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+}
+
+body {
+  @apply bg-bg text-text font-sans;
+}
