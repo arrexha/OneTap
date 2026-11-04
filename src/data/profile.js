@@ -2,7 +2,7 @@
 export const profile = {
   name: "Ar",
 
-  avatar: "",
+  avatar: "/avatar.jpg",
   links: [
 
     { label: "My Website", icon: "/icons/globe.svg", url: "https://arrexha.netlify.app/" },
