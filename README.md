@@ -26,7 +26,7 @@ Then open http://localhost:5173.
 
 ```
 src/
-├─ data/profile.js       ← name, footer, and links
+├─ data/profile.js       ← name and links
 ├─ components/
 │  ├─ Avatar.jsx         ← profile picture
 │  └─ LinkButton.jsx     ← a single link button

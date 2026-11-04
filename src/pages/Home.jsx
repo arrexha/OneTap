@@ -14,13 +14,6 @@ export default function Home() {
           <LinkButton key={link.label} {...link} />
         ))}
       </nav>
-
-      {/* the secret door 🦦 */}
-      <footer className="mt-10 text-sm">
-        <a href="#games" className="text-muted transition hover:text-text">
-          {profile.footer}
-        </a>
-      </footer>
     </>
   );
 }
