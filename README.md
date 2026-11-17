@@ -10,7 +10,6 @@ Built with **React**, **Vite**, and **Tailwind CSS**. It automatically switches 
 - 📸 [Instagram](https://www.instagram.com/arrexha)
 - 💼 [LinkedIn](https://linkedin.com/in/arrexha)
 - 💻 [GitHub](https://github.com/arrexha)
-- 🐦 [X](https://x.com/ArRexha00)
 
 ## Run it locally
 
