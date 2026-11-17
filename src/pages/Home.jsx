@@ -14,6 +14,10 @@ export default function Home() {
           <LinkButton key={link.label} {...link} />
         ))}
       </nav>
+
+      <footer className="mt-12 text-xs tracking-wide text-muted opacity-40 select-none">
+        @ fuck otter
+      </footer>
     </>
   );
 }
